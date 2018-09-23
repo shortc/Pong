@@ -1,0 +1,1 @@
+/usr/bin/c++   -std=c++11 -g  -rdynamic CMakeFiles/computerview.dir/bin/computerview.cpp.o  -o computerview -lsfml-graphics -lsfml-window -lsfml-system -lsfml-audio -lsfml-network 

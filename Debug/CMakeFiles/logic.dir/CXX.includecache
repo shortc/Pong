@@ -1,0 +1,14 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/short/Documents/WM F18/CSCI437 Game Design/pong/bin/logic.cpp
+logic.h
+/home/short/Documents/WM F18/CSCI437 Game Design/pong/bin/logic.h
+
+/home/short/Documents/WM F18/CSCI437 Game Design/pong/bin/logic.h
+
