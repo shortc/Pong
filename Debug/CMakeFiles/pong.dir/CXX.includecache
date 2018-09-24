@@ -16,9 +16,21 @@ SFML/Graphics.hpp
 ../src/logic.h
 /home/short/Documents/WM F18/CSCI437 Game Design/pong/src/logic.h
 
+/home/short/Documents/WM F18/CSCI437 Game Design/pong/src/ball.h
+SFML/Graphics.hpp
+-
+
 /home/short/Documents/WM F18/CSCI437 Game Design/pong/src/computerview.h
 
 /home/short/Documents/WM F18/CSCI437 Game Design/pong/src/humanview.h
+paddle.h
+/home/short/Documents/WM F18/CSCI437 Game Design/pong/src/paddle.h
+ball.h
+/home/short/Documents/WM F18/CSCI437 Game Design/pong/src/ball.h
 
 /home/short/Documents/WM F18/CSCI437 Game Design/pong/src/logic.h
+
+/home/short/Documents/WM F18/CSCI437 Game Design/pong/src/paddle.h
+SFML/Graphics.hpp
+-
 

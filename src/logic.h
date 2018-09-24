@@ -4,9 +4,13 @@
 class logic
 {
 public:
+
+    int LeftScore;
+    int RightScore;
+
     logic();
     ~logic();
 
-    void Update();
+    void Update(sf::Time&);
 };
 #endif

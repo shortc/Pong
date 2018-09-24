@@ -3,6 +3,8 @@
 
 CMakeFiles/pong.dir/bin/pong.cpp.o
  /home/short/Documents/WM F18/CSCI437 Game Design/pong/bin/pong.cpp
+ /home/short/Documents/WM F18/CSCI437 Game Design/pong/src/ball.h
  /home/short/Documents/WM F18/CSCI437 Game Design/pong/src/computerview.h
  /home/short/Documents/WM F18/CSCI437 Game Design/pong/src/humanview.h
  /home/short/Documents/WM F18/CSCI437 Game Design/pong/src/logic.h
+ /home/short/Documents/WM F18/CSCI437 Game Design/pong/src/paddle.h

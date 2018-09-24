@@ -6,15 +6,11 @@
 
 #IncludeRegexTransform: 
 
-/home/short/Documents/WM F18/CSCI437 Game Design/pong/src/humanview.cpp
+/home/short/Documents/WM F18/CSCI437 Game Design/pong/src/logic.cpp
 SFML/Graphics.hpp
 -
-humanview.h
-/home/short/Documents/WM F18/CSCI437 Game Design/pong/src/humanview.h
-paddle.h
-/home/short/Documents/WM F18/CSCI437 Game Design/pong/src/paddle.h
+logic.h
+/home/short/Documents/WM F18/CSCI437 Game Design/pong/src/logic.h
 
-/home/short/Documents/WM F18/CSCI437 Game Design/pong/src/humanview.h
-
-/home/short/Documents/WM F18/CSCI437 Game Design/pong/src/paddle.h
+/home/short/Documents/WM F18/CSCI437 Game Design/pong/src/logic.h
 

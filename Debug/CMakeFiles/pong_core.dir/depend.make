@@ -7,6 +7,7 @@ CMakeFiles/pong_core.dir/src/ball.cpp.o: ../src/ball.h
 CMakeFiles/pong_core.dir/src/computerview.cpp.o: ../src/computerview.cpp
 CMakeFiles/pong_core.dir/src/computerview.cpp.o: ../src/computerview.h
 
+CMakeFiles/pong_core.dir/src/humanview.cpp.o: ../src/ball.h
 CMakeFiles/pong_core.dir/src/humanview.cpp.o: ../src/humanview.cpp
 CMakeFiles/pong_core.dir/src/humanview.cpp.o: ../src/humanview.h
 CMakeFiles/pong_core.dir/src/humanview.cpp.o: ../src/paddle.h

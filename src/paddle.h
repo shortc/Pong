@@ -1,10 +1,17 @@
 #ifndef PADDLE_H
 #define PADDLE_H
 
-class paddle
+#include <SFML/Graphics.hpp>
+
+class paddle : public sf::RectangleShape
 {
 public:
-    paddle();
+    paddle(int);
     ~paddle();
+
+    void MoveUp(sf::Time&);
+    void MoveDown(sf::Time&);
+private:
+    float speed;
 };
 #endif
