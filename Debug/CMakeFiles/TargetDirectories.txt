@@ -1,4 +1,0 @@
-/home/short/Documents/WM F18/CSCI437 Game Design/pong/Debug/CMakeFiles/rebuild_cache.dir
-/home/short/Documents/WM F18/CSCI437 Game Design/pong/Debug/CMakeFiles/edit_cache.dir
-/home/short/Documents/WM F18/CSCI437 Game Design/pong/Debug/CMakeFiles/pong_core.dir
-/home/short/Documents/WM F18/CSCI437 Game Design/pong/Debug/CMakeFiles/pong.dir

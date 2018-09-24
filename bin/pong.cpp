@@ -1,6 +1,6 @@
 /**
  * @file pong.cpp
- * Description
+ * Retro game Pong remaster in SFML
  *
  * @author Christopher Short
  * @date 2018.09.17
@@ -13,44 +13,60 @@
 #include "../src/logic.h"
 
 
-void IsKeyPressed()
+/**
+* If a key is pressed that is used to controler the game, this
+* function captures the key press
+*/
+int Check4KeyPress()
 {
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
     {
-        // paddle move up
+        return 1;
     }
     else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
     {
-        // paddle move down
+        return 2;
     }
     else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape))
     {
-        // quit...
+        return 3;
     }
+    else if (sf::Keyboard::isKeyPressed(sf::Keyboard::F1))
+    {
+        return 4;
+    }
+    return 0;
 }
 
+
+/**
+* Contains main game loop
+*/
 int main(int argc, char** argv)
 {
-    // create main window
+    // creates main window
     sf::RenderWindow App(sf::VideoMode(800,600,32), "Pong - SFML");
 
+    // creates logic and view componments
     computerview comp_view;
     humanview human_view(App);
     logic game_logic;
 
-    // RightPlayer = new paddle(2);
-    // LeftPlayer = new paddle(1);
-    // GameBall = new ball();
+    // Used to adjust speed of the game based on speed of computer
+    sf::Time LastUpdate = sf::Time::Zero;
+    sf::Clock GameClock;
 
-    sf::Time deltaMs;
-    sf::Clock clock;
+    // Stores the captured keypress (if any)
+    int keypressed;
 
     // start main loop
     while(App.isOpen())
     {
-        deltaMs = clock.getElapsedTime();
+        // Calculates the speed of the game
+        sf::Time deltaMs = GameClock.restart();
+        LastUpdate += deltaMs;
 
-        // process events
+        // Main game loop
         sf::Event Event;
         while(App.pollEvent(Event))
         {
@@ -58,12 +74,12 @@ int main(int argc, char** argv)
             if(Event.type == sf::Event::Closed)
             App.close();
         }
-        IsKeyPressed();
 
-        game_logic.Update(deltaMs);
-        human_view.Update(App);
-        comp_view.Update();
+        // Listens for significant key presses
+        keypressed = Check4KeyPress();
 
+        // Updates the game logic which updates the views
+        game_logic.Update(deltaMs, App, comp_view, human_view, keypressed);
     }
 
         // Done.

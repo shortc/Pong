@@ -9,6 +9,8 @@ public:
     paddle(int);
     ~paddle();
 
+    void LeftReset();
+    void RightReset();
     void MoveUp(sf::Time&);
     void MoveDown(sf::Time&);
 private:

@@ -1,1 +1,0 @@
-/usr/bin/c++   -std=c++11 -g  -rdynamic CMakeFiles/humanview.dir/bin/humanview.cpp.o  -o humanview -lsfml-graphics -lsfml-window -lsfml-system -lsfml-audio -lsfml-network 

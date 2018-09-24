@@ -1,75 +1,88 @@
 #include <SFML/Graphics.hpp>
 #include "humanview.h"
-//#include "paddle.h"
 
 humanview::humanview(sf::RenderWindow& App)
 {
-
-    //sf::RectangleShape LeftPlayer(sf::Vector2f(30, 200));
-    //sf::RectangleShape RightPlayer(sf::Vector2f(30, 200));
-    //sf::CircleShape ball(5);
-
     app_window = &App;
-
-    RightPlayer = new paddle(2);
-    LeftPlayer = new paddle(1);
-    GameBall = new ball();
-
-    // ball = new sf::CircleShape();
-    // RightPlayer = new sf::RectangleShape();
-    // LeftPlayer = new sf::RectangleShape();
-    //
-    // ball->setRadius(5);
-    // RightPlayer->setSize(sf::Vector2f(30, 200));
-    // LeftPlayer->setSize(sf::Vector2f(30, 200));
-    //
-    // RightPlayer->setFillColor(sf::Color(250, 250, 250));
-    // LeftPlayer->setFillColor(sf::Color(250, 250, 250));
-    // ball->setFillColor(sf::Color(250, 250, 250));
-    //
-    // ball->setPosition(400, 300);
-    // LeftPlayer->setPosition(20, 200);
-    // RightPlayer->setPosition(750, 200);
 
     // Create a graphical text to display
     font.loadFromFile("../src/fonts/Hack.ttf");
+
+    // Initializes the non-moving objects
     LeftScore = new sf::Text();
     RightScore = new sf::Text();
     Restart = new sf::Text();
-    LeftScore->setString("FIX");
-    RightScore->setString("FIX");
-    Restart->setString("RESTART");
+    Winner = new sf::Text();
+    ExitInstructs = new sf::Text();
+    RestartInstructs = new sf::Text();
+
+    LeftScore->setString("00");
+    RightScore->setString("00");
+    Restart->setString("PONG");
+    ExitInstructs->setString("Press Esc to EXIT");
+    RestartInstructs->setString("Press F1 to RESTART");
+
     LeftScore->setFont(font);
     RightScore->setFont(font);
     Restart->setFont(font);
+    Winner->setFont(font);
+    ExitInstructs->setFont(font);
+    RestartInstructs->setFont(font);
+
     LeftScore->setCharacterSize(20);
     RightScore->setCharacterSize(20);
     Restart->setCharacterSize(20);
+    Winner->setCharacterSize(100);
+    ExitInstructs->setCharacterSize(20);
+    RestartInstructs->setCharacterSize(20);
+
     LeftScore->setPosition(sf::Vector2f(10, 10));
     RightScore->setPosition(sf::Vector2f(app_window->getSize().x - 40, 10));
     Restart->setPosition(app_window->getSize().x / 2 - 40, 10);
-    //sf::Text text("PONG", font, 50);
+    Winner->setPosition(200, 200);
+    ExitInstructs->setPosition(275, app_window->getSize().y - 30);
+    RestartInstructs->setPosition(275, app_window->getSize().y - 50);
+
+    Winner->setFillColor(sf::Color::Red);
 }
 
-humanview::~humanview()
+
+/**
+* Updates the View for the human player
+*/
+void humanview::Update(sf::RenderWindow& App, ball** GameBall, paddle** RightPlayer,
+    paddle** LeftPlayer, std::string& RightScoreStr, std::string& LeftScoreStr, int GameWinner)
 {
 
-}
-
-void humanview::Update(sf::RenderWindow& App)
-{
     // clear screen and fill with blue
     App.clear(sf::Color::Blue);
 
-    // Draw the string
-    //App.draw(text);
+    // When a player wins the games notifies who won
+    if(GameWinner == 1)
+    {
+        Winner->setString("PLAYER 1\n   WINS!");
+        App.draw(*Winner);
+    }
+    if(GameWinner == 2)
+    {
+        Winner->setString("PLAYER 2\n   WINS!");
+        App.draw(*Winner);
+    }
+
+    // The score of the game is passed in from the game logic
+    LeftScore->setString(LeftScoreStr);
+    RightScore->setString(RightScoreStr);
+
+    // Draws the game
     App.draw(*Restart);
     App.draw(*RightScore);
     App.draw(*LeftScore);
-    App.draw(*LeftPlayer);
-    App.draw(*RightPlayer);
-    App.draw(*GameBall);
+    App.draw(*ExitInstructs);
+    App.draw(*RestartInstructs);
+    App.draw(**LeftPlayer);
+    App.draw(**RightPlayer);
+    App.draw(**GameBall);
 
-    // display
+    // displays
     App.display();
 }

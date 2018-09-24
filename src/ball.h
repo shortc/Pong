@@ -9,9 +9,16 @@ public:
     ball();
     ~ball();
 
-    void ChangeDirecton();
+    void RandVelocity();
+    void ChangeDirY();
+    void ChangeDirX();
+    void SetVelocityX(float NewX);
+    void SetVelocityY(float NewX);
+    float GetVelocityY();
+    float GetVelocityX();
     void Reset();
+    void GameOver();
 private:
-    sf::Vector2f speed;
+    sf::Vector2f velocity;
 };
 #endif
